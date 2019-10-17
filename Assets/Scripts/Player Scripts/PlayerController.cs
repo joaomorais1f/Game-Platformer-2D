@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     public float runSpeed, jumpForce;
-    private float jumpHeight = -4f;
+    private float jumpHeight = -3f;
     private float moveInput;
 
     private Rigidbody2D myBody;
@@ -28,14 +28,14 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Movement () {
-        moveInput = Input.GetAxisRaw ("Horizontal") * runSpeed;
+        moveInput = Input.GetAxisRaw("Horizontal") * runSpeed;
         // código para o personagem não atacar no momento em que está 
         // if (anim.GetBool("SwordAttack")) moveInput = 0;
         // moveInput com valores negativos não irá funcionar a animação de correr, logo utilizar a função Mathf
-        anim.SetFloat ("Speed", Mathf.Abs (moveInput));
+        anim.SetFloat("Speed", Mathf.Abs(moveInput));
         myBody.velocity = new Vector2 (moveInput, myBody.velocity.y);
         // Quanto mais pressionado o teclado, pulo mais alto
-        if (Input.GetKeyUp (KeyCode.Space)) {
+        if (Input.GetKeyUp(KeyCode.Space)) {
             if (myBody.velocity.y > 0) {
                 myBody.velocity = new Vector2 (myBody.velocity.x, myBody.velocity.y * jumpHeight);
             }
@@ -45,16 +45,16 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (myBody.velocity.y < 0) {
-            anim.SetBool ("Fall", true);
+            anim.SetBool("Fall", true);
         } else {
-            anim.SetBool ("Fall", false);
+            anim.SetBool("Fall", false);
         }
     }
 
     void CheckCollisionForJump () {
-        Collider2D bottomHit = Physics2D.OverlapBox (groundCheck.position, range, 0, groundLayer);
+        Collider2D bottomHit = Physics2D.OverlapBox(groundCheck.position, range, 0, groundLayer);
         if (bottomHit != null) {
-            if (bottomHit.gameObject.tag == "Ground" && Input.GetKeyDown (KeyCode.Space)) {
+            if (bottomHit.gameObject.tag == "Ground" && Input.GetKeyDown(KeyCode.Space)) {
                 myBody.velocity = new Vector2 (myBody.velocity.x, jumpForce);
                 anim.SetBool ("Jump", true);
             } else {
