@@ -22,6 +22,8 @@ public class EnemySkeleton : MonoBehaviour {
     public LayerMask playerLayer;
     public int damage;
 
+    public AudioClip axeSwing;
+
     void Awake () {
 
         anim = GetComponent<Animator> ();
@@ -109,6 +111,8 @@ public class EnemySkeleton : MonoBehaviour {
 
     public void Attack () {
         myBody.velocity = new Vector2(0, myBody.velocity.y);
+
+        SoundManager.instance.PlaySoundFx(axeSwing, .2f);
 
         Collider2D attackPlayer = Physics2D.OverlapCircle(attackPos.position, attackRange, playerLayer);
         if (attackPlayer) {

@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  distance: 5
+  distance: 3
   direction: -1
   attackPos: {fileID: 2532715227357537242}
   attackRange: 0.13
@@ -183,6 +183,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   damage: 20
+  axeSwing: {fileID: 8300000, guid: 4829f2e4f5492aa4fb955efc8c7ee3b5, type: 3}
 --- !u!95 &2532715227957044402
 Animator:
   serializedVersion: 3

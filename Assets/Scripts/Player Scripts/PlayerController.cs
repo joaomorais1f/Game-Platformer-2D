@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour {
 
     private Vector3 range;
 
+    public AudioClip[] footStepClips;
+    public AudioClip jumpClip;
+
+
     void Awake () {
         myBody = GetComponent<Rigidbody2D> ();
         anim = GetComponent<Animator> ();
@@ -56,6 +60,7 @@ public class PlayerController : MonoBehaviour {
         if (bottomHit != null) {
             if (bottomHit.gameObject.tag == "Ground" && Input.GetKeyDown(KeyCode.Space)) {
                 myBody.velocity = new Vector2 (myBody.velocity.x, jumpForce);
+                SoundManager.instance.PlaySoundFx(jumpClip, .2f);
                 anim.SetBool ("Jump", true);
             } else {
                 anim.SetBool ("Jump", false);
@@ -68,5 +73,9 @@ public class PlayerController : MonoBehaviour {
         Vector3 transformScale = transform.localScale;
         transformScale.x *= -1;
         transform.localScale = transformScale;
+    }
+
+    void RunningSound() {
+        SoundManager.instance.PlayRandomSoundFx(footStepClips);
     }
 }

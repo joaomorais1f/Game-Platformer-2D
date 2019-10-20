@@ -11,7 +11,8 @@ public class EnemyHealth : MonoBehaviour {
     }
 
     public void TakeDamage (int damage) {
-        anim.SetTrigger ("Hit");
+        anim.SetTrigger("Hit");
+        FindObjectOfType<CameraShake>().ShakeItLow();
         health -= damage;
         if (health < 0) {
             anim.SetBool("Death", true);

@@ -21,6 +21,9 @@ public class PlayerAttack : MonoBehaviour {
 
     private bool canShoot;
 
+    public AudioClip pullShot, swordHit;
+    public AudioClip[] swordclips;
+
     void Awake () {
         anim = GetComponent<Animator>();
         arrowCount = 10; //definir quantas flechas pode-se atirar
@@ -45,10 +48,11 @@ public class PlayerAttack : MonoBehaviour {
 
     public void ArrowSpawn() {
         Instantiate(arrow, arrowPos.position, Quaternion.identity);
+        SoundManager.instance.PlaySoundFx(pullShot, .3f);
     }
 
     void SwordAttack () {
-        if (Input.GetKeyDown(KeyCode.J) && !anim.GetBool("Jump")) {
+        if (Input.GetKeyDown(KeyCode.J) && !anim.GetBool("Jump")) { 
             if (combo < 3) {
                 anim.SetBool("SwordAttack", true);
                 activeTimeToReset = true;
@@ -59,8 +63,11 @@ public class PlayerAttack : MonoBehaviour {
                 for (int i = 0; i < attackEnemies.Length; i++) {
                     if (attackEnemies[i].GetComponent<EnemyHealth>().health > 0) {
                         attackEnemies[i].GetComponent<EnemyHealth>().TakeDamage(damage);
+                        SoundManager.instance.PlaySoundFx(swordHit, Random.Range(.1f, .3f));
                     }
                 }
+
+                SoundManager.instance.PlaySoundFx(swordclips[combo], Random.Range(.2f, .3f));
 
             } else {
                 anim.SetBool("SwordAttack", false);
@@ -74,8 +81,10 @@ public class PlayerAttack : MonoBehaviour {
             for (int i = 0; i < attackEnemies.Length; i++) {
                 if (attackEnemies[i].GetComponent<EnemyHealth>().health > 0) {
                     attackEnemies[i].GetComponent<EnemyHealth>().TakeDamage(damage + 10);
+                    SoundManager.instance.PlaySoundFx(swordHit, Random.Range(.1f, .3f));
                 }
             }
+            SoundManager.instance.PlaySoundFx(swordclips[0], Random.Range(.2f, .3f));
         }
     }
 

@@ -6,6 +6,7 @@ public class Arrow : MonoBehaviour
 {
     public float speed = 0.05f;
     public bool right;
+    public AudioClip connect;
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class Arrow : MonoBehaviour
         if (target.tag == "Enemy") {
             Destroy(gameObject);
             target.GetComponent<EnemyHealth>().TakeDamage(20);
+            SoundManager.instance.PlaySoundFx(connect, .5f);
         }    
     }
 }

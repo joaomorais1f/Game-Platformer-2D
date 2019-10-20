@@ -186,12 +186,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2217a0d3b45c62439e96d35a3b3a0ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 2.5
-  jumpForce: 5
+  runSpeed: 4
+  jumpForce: 6
   groundCheck: {fileID: 3437816144960993455}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  footStepClips:
+  - {fileID: 8300000, guid: bfdfab312cbec504980e735dedded01b, type: 3}
+  - {fileID: 8300000, guid: 7eb4b3eea4f0e1c4daaf648ae21ecb92, type: 3}
+  - {fileID: 8300000, guid: 8779fabdf8f2c90469993775f8bfeb0c, type: 3}
+  - {fileID: 8300000, guid: 049d4c49b949f204c979da4a6f594d48, type: 3}
+  jumpClip: {fileID: 8300000, guid: ba30437f1b02d67478875f68fc595ce2, type: 3}
 --- !u!114 &3437816144390903394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +218,12 @@ MonoBehaviour:
   damage: 30
   arrow: {fileID: 847087603647718205, guid: c8e939ecb75a99946a755a143b3b53e2, type: 3}
   arrowPos: {fileID: 3437816143718911130}
+  pullShot: {fileID: 8300000, guid: ca4d923430051c04583d209a9f659b0a, type: 3}
+  swordHit: {fileID: 8300000, guid: d3a2f046510d77f4bab704c0e4019c17, type: 3}
+  swordclips:
+  - {fileID: 8300000, guid: 7f729e51865232e4b856dc74c29be687, type: 3}
+  - {fileID: 8300000, guid: 6bfeeb69847b7e346a84220f1fc014a1, type: 3}
+  - {fileID: 8300000, guid: 19c7d226b851eec49bb3968d308d1488, type: 3}
 --- !u!114 &3437816144390903420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +237,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  flash: {fileID: 0}
+  playerSpr: {fileID: 3437816144390903398}
+  colliderColor: {r: 1, g: 0.2784314, b: 0.2784314, a: 1}
+  colliderColor2: {r: 1, g: 1, b: 1, a: 0.5019608}
+  axeHit: {fileID: 8300000, guid: 2c0b7fc5b9707d94687d1242c46a24ae, type: 3}
 --- !u!1 &3437816144960993452
 GameObject:
   m_ObjectHideFlags: 0

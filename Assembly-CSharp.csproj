@@ -56,6 +56,9 @@
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyDragon.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemySkeleton.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\FireBall.cs" />
+     <Compile Include="Assets\Scripts\GamePlay Scripts\CameraShake.cs" />
+     <Compile Include="Assets\Scripts\GamePlay Scripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Arrow.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerController.cs" />
