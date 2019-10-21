@@ -238,6 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   flash: {fileID: 0}
+  slider: {fileID: 0}
   playerSpr: {fileID: 3437816144390903398}
   colliderColor: {r: 1, g: 0.2784314, b: 0.2784314, a: 1}
   colliderColor2: {r: 1, g: 1, b: 1, a: 0.5019608}

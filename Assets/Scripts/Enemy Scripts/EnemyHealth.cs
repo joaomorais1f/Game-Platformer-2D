@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour {
         FindObjectOfType<CameraShake>().ShakeItLow();
         health -= damage;
         if (health < 0) {
+            gameObject.tag = "Untagged";
             anim.SetBool("Death", true);
         }
 

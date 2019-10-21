@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemySkeleton.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\FireBall.cs" />
      <Compile Include="Assets\Scripts\GamePlay Scripts\CameraShake.cs" />
+     <Compile Include="Assets\Scripts\GamePlay Scripts\GamePlayManager.cs" />
      <Compile Include="Assets\Scripts\GamePlay Scripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Arrow.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerAttack.cs" />
